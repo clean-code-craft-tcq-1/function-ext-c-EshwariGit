@@ -19,6 +19,13 @@ IsBatteryStatusInRange ChargeRateValue = {
         "ChargeRate"
 };
 
+IsBatteryStatusInRange Stateofhealth = {
+        0.5,
+        1,
+        "StateOfHealth"
+};
+
+
 int ChecktemperatureInRange(float temperature) {
 
     int istemperatureinrange = BATTERY_CONDITION_GOOD;
@@ -28,6 +35,17 @@ int ChecktemperatureInRange(float temperature) {
     }
     PrintBatterycondition(TemparatureValue,istemperatureinrange );
     return istemperatureinrange;
+}
+
+int CheckStateofHealthInRange(float stateofhealth) {
+
+    int isstateofhealthinrange = BATTERY_CONDITION_GOOD;
+    if (stateofhealth<Stateofhealth.BatteryL|| stateofhealth>Stateofhealth.BatteryU)
+    {
+        isstateofhealthinrange = BATTERY_CONDITION_BAD;
+    }
+    PrintBatterycondition(Stateofhealth,isstateofhealthinrange );
+    return isstateofhealthinrange;
 }
 
 int ChecksocInRange(float soc){
@@ -59,15 +77,18 @@ void PrintBatterycondition(IsBatteryStatusInRange BatteryData_Type, int BatteryM
     printf("%s %s \n", BatteryData_Type.BatteryD, BatteryMessage[BatteryMessageI]);
 }
 
-int batteryIsOk(float temperature, float soc, float chargeRate) {
+int batteryIsOk(float temperature, float soc, float chargeRate, float stateofhealth) {
     int istemperatureinrange, issocinrange, ischargerateinrange;
     istemperatureinrange = ChecktemperatureInRange(temperature);
     issocinrange = ChecksocInRange(soc);
     ischargerateinrange = CheckchargeRateInRange(chargeRate);
-    return ( istemperatureinrange && issocinrange && ischargerateinrange);
+    isstateofhealthinrange = CheckStateofHealthInRange(stateofhealth);
+    return ( istemperatureinrange && issocinrange && ischargerateinrange && isstateofhealthinrange );
 }
 
 int main() {
     assert(batteryIsOk(25, 70, 0.7));
     assert(!batteryIsOk(50, 85, 0));
+    assert(!batteryIsOk(0.5, 0.8, 1));
+    
 }
