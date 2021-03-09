@@ -87,8 +87,9 @@ int batteryIsOk(float temperature, float soc, float chargeRate, float stateofhea
 }
 
 int main() {
-    assert(batteryIsOk(25, 70, 0.7));
-    assert(!batteryIsOk(50, 85, 0));
-    assert(!batteryIsOk(0.5, 0.8, 1));
+  assert(batteryIsOk(0.7, 0.4, 70, 25));
+  assert(!batteryIsOk(0.4,0,85,50));
+  assert(!batteryIsOk(0.6,0.6,50,30));
+  assert(!batteryIsOk(0.7,0.2,50,60));
     
 }
