@@ -78,12 +78,9 @@ void PrintBatterycondition(IsBatteryStatusInRange BatteryData_Type, int BatteryM
 }
 
 int batteryIsOk(float temperature, float soc, float chargeRate, float stateofhealth) {
-    int istemperatureinrange, issocinrange, ischargerateinrange,isstateofhealthinrange ;
-    istemperatureinrange = ChecktemperatureInRange(temperature);
-    issocinrange = ChecksocInRange(soc);
-    ischargerateinrange = CheckchargeRateInRange(chargeRate);
-    isstateofhealthinrange = CheckStateofHealthInRange(stateofhealth);
-    return ( istemperatureinrange && issocinrange && ischargerateinrange && isstateofhealthinrange );
+    int CompleteParamstatus;
+    CompleteParamstatus = (ChecktemperatureInRange(temperature)) & (ChecksocInRange(soc)) & (CheckchargeRateInRange(chargeRate)) & (CheckStateofHealthInRange(stateofhealth));
+    return (CompleteParamstatus);
 }
 
 int main() {
