@@ -15,9 +15,10 @@ const char *BatteryMessage[] =
 int ChecktemperatureInRange(float temperature);
 int ChecksocInRange(float soc);
 int CheckchargeRateInRange(float chargeRate);
-int batteryIsOk(float temperature, float soc, float chargeRate);
+int CheckStateofHealthInRange(float stateofhealth);
+int batteryIsOk(float temperature, float soc, float chargeRate, float stateofhealth);
 
-int batteryIsOk(float temperature, float soc, float chargeRate);
+
 void PrintBatterycondition(IsBatteryStatusInRange BatteryData_Type, int BatteryMessageI);
 
 #define BATTERY_CONDITION_GOOD 1
