@@ -15,6 +15,7 @@ const char *BatteryMessage[] =
 int ChecktemperatureInRange(float temperature);
 int ChecksocInRange(float soc);
 int CheckchargeRateInRange(float chargeRate);
+// Adding StateofHealth
 int CheckStateofHealthInRange(float stateofhealth);
 int batteryIsOk(float temperature, float soc, float chargeRate, float stateofhealth);
 
