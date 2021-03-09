@@ -18,7 +18,7 @@ IsBatteryStatusInRange ChargeRateValue = {
         0.8,
         "ChargeRate"
 };
-
+// Adding Stateofhealth
 IsBatteryStatusInRange Stateofhealth = {
         0.5,
         1,
