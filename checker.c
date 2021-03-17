@@ -6,26 +6,26 @@
 IsBatteryStatusInRange TemparatureValue = {
         0.0,
         45.0,
-        40.0,
+       
         "Temparature"
 };
 IsBatteryStatusInRange SocValue = {
         20.0,
         80.0,
-        70.0,
+       
         "StateOfCharge"
 };
 IsBatteryStatusInRange ChargeRateValue = {
         0.0,
         0.8,
-        0.75,
+     
         "ChargeRate"
 };
 // Adding Stateofhealth
 IsBatteryStatusInRange Stateofhealth = {
         0.5,
         1,
-        0.9
+     
         "StateOfHealth"
 };
 
