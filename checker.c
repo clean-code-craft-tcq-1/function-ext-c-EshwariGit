@@ -25,6 +25,7 @@ IsBatteryStatusInRange Stateofhealth = {
         "StateOfHealth"
 };
 
+//Warning alert for customer when its Battery factors( Temperature, Soc, ChargeRate and Stateofhealth) nearing to the breach.
 
 int ChecktemperatureInRange(float temperature) {
 
