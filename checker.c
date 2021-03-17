@@ -38,10 +38,7 @@ int ChecktemperatureInRange(float temperature) {
     {
         istemperatureinrange = BATTERY_CONDITION_BAD;
     }
-     if (temperature>AlertforCust)
-    {
-        istemperatureinrange = BATTERY_ALERT;
-    }
+
     PrintBatterycondition(TemparatureValue,istemperatureinrange );
     return istemperatureinrange;
 }
@@ -53,10 +50,7 @@ int CheckStateofHealthInRange(float stateofhealth) {
     {
         isstateofhealthinrange = BATTERY_CONDITION_BAD;
     }
-    if (temperature>AlertforCust)
-    {
-        istemperatureinrange = BATTERY_ALERT;
-    }
+
     PrintBatterycondition(Stateofhealth,isstateofhealthinrange );
     return isstateofhealthinrange;
 }
@@ -67,10 +61,7 @@ int ChecksocInRange(float soc){
     {
         issocinrange = BATTERY_CONDITION_BAD;
     }
-    if (temperature>AlertforCust)
-    {
-        istemperatureinrange = BATTERY_ALERT;
-    }
+
     PrintBatterycondition(SocValue,issocinrange);
     return issocinrange;
 }
@@ -81,10 +72,6 @@ int CheckchargeRateInRange(float chargeRate){
     if(chargeRate<ChargeRateValue.BatteryL || chargeRate>ChargeRateValue.BatteryU )
     {
         ischargerateinrange = BATTERY_CONDITION_BAD;
-    }
-    if (temperature>AlertforCust)
-    {
-        istemperatureinrange = BATTERY_ALERT;
     }
 
     PrintBatterycondition(ChargeRateValue,ischargerateinrange );
