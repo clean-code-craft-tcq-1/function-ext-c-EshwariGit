@@ -3,6 +3,7 @@
 typedef struct{
     float BatteryL;    //Battery status Low.
     float BatteryU;    //Battery status High
+    float AlertforCust;
     const char* BatteryD;  //Message Display paramter
 }IsBatteryStatusInRange;
 
@@ -24,3 +25,4 @@ void PrintBatterycondition(IsBatteryStatusInRange BatteryData_Type, int BatteryM
 
 #define BATTERY_CONDITION_GOOD 1
 #define BATTERY_CONDITION_BAD 0
+#define BATTERY_ALERT 2
